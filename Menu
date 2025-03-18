@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <title>Soleil Cafe</title>
+</head>
+
+<body>
+	<div>
+	<ul id=“nav”>
+	<li><a href=“”>Home</a></li>
+	</div>
+
+<h1>Menu</h1>
+	<div>
+	<table>
+	<tr>
+	<td><img src=“” alt=“Caffè Latte”></td>
+	<td>Caffè Latte (Hot / Iced)</td>
+	</tr>
+	</table>
+
+	<div id=“footer”>
+	<footer>&copy;Copyright Soleil Cafe. All rights reserved.</footer>
+	</div>
+</body>
+
+</html>
