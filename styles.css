@@ -1,0 +1,65 @@
+/* Account Page Styles */
+.account {
+    background: linear-gradient(to bottom, #ffeb3b, #fffbea); /* Sunshine gradient */
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  form {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  form h2 {
+    color: #f4a261; /* Warm orange for sunshine */
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    background: #2a9d8f; /* Green for nature */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background: #21867a;
+  }
+  
+  a {
+    color: #f4a261;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
