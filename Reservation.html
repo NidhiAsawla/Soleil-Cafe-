@@ -1,45 +1,56 @@
-@@ -0,0 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <header>
         <h1>Make a Reservation</h1>
     </header>
+     <!-- Navigation Menu -->
+<nav>
+    <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="account.html">Customer Account</a></li>
+            <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
     <main>
-        <form action="/submit-reservation" method="POST">
+            <form class="reservation-form">
             <!-- Full Name Section -->
-            <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="full-name" required>
+            <form class="reservation-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            </form>
 
-            <!-- Email Section -->
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <!-- Phone Section -->
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <!-- Date Section -->
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-
-            <!-- Time Section -->
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
-
-            <!-- Number of Guests -->
-            <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" min="1" required>
-
-            <!-- Submit Button -->
-            <button type="submit">Reserve</button>
-        </form>
+        <!-- Reservation Page -->
+        <div id="success-message" class="hidden success-message">
+            Reservation Successful!
+        </div>
+  
+        <button onclick="showSuccessMessage()" class="submit-button">
+            Submit Reservation
+        </button>    
     </main>
     <footer>
         <p>&copy; 2025 Soleil Cafe</p>

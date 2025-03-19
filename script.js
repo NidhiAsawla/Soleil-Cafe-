@@ -61,3 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleForm(signupForm, loginForm);
     });
   });
+// Function to show the success message
+function showSuccessMessage() {
+  const message = document.getElementById('success-message');
+  message.classList.remove('hidden');
+}
+
