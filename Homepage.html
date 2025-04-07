@@ -1,62 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soleil Cafe</title>
-    <link rel="stylesheet" href="style.css">
- <!-- Link to external CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soleil Cafe</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: large;
+      background: linear-gradient(to right, #EE7F60, #1B4575);
+      color: white;
+    }
+
+    header {
+      background-image: url('Cafe-interior.png');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .header-content {
+      display: inline-block;
+      background-color: rgba(15, 45, 50, 0.7);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    nav {
+      background-color: #1B4575;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .welcome {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .welcome-text {
+      flex: 1 1 400px;
+    }
+
+    .welcome-text h2 {
+      font-size: 2rem;
+    }
+
+    .welcome-text p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .study-space {
+      flex: 1 1 400px;
+      text-align: right;
+    }
+
+    .study-space img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .study-space p {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .cta-links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #EE7F60;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cta-links a:hover {
+      background-color: #d4664f;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      margin-top: 60px;
+    }
+
+    .gallery-item {
+      position: relative;
+      text-align: center;
+    }
+
+    .caption-overlay {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(15, 45, 50, 0.7);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: white;
+      z-index: 1;
+    }
+
+    .gallery-item img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      background-color: #0F2D32;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #EE7F60;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .welcome {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .study-space {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .study-space p {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .gallery-item img {
+        width: 70%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <h1>Soleil Cafe</h1> <h3>Your cozy spot for freshly baked goods, coffee, and a perfect study space.</h3>
-        </div>
-    </header>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="menu.html">Menu</a></li> 
-            <li><a href="reservation.html">Reservation</a></li> 
-            <li><a href="account.html">Customer Account</a></li> 
-            <li><a href="contact.html">Contact</a></li> 
-        </ul>
-    </nav>
+  <header>
+    <div class="header-content">
+      <h1>Soleil Cafe</h1>
+      <p class="tagline">Your cozy spot for coffee, pastries, and a perfect study space.</p>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="welcome">
-            <h2>Welcome to Soleil Cafe</h2>
-            <p>At <strong> Soleil Cafe</strong> we believe in bringing people together with 
-                freshly baked pastries, artisan coffee, and a welcoming study environment. 
-                We also pride ourselves on delivering an unforgettable dining experience. 
-                Founded in 2020, our mission has always been to combine exceptional food with warm hospitality,
-                creating a place where friends and families can come together to enjoy great meals.</p>
-            <p>Our chefs are passionate about crafting dishes that highlight the finest ingredients,
-                blending traditional recipes with modern techniques to bring you a menu that's both diverse and innovative.</p>
-                
-        <section class="features">
-            <h3><strong> Why Choose Us?</strong></h3>
-                    <ul>
-                        <li><strong>Fresh Ingredients:</strong> We source our ingredients locally to ensure quality and sustainability.</li>
-                        <li><strong>Exceptional Service:</strong> Our team is dedicated to providing attentive and friendly service.</li>
-                        <li><strong>Ambiance:</strong> Enjoy a cozy and welcoming atmosphere perfect for any occasion.</li>
-                    </ul>
-                    <p>Whether you're here for a romantic dinner, a family gathering, or simply to explore new flavors,
-                        we're committed to making your visit special. Thank you for choosing us, and we look forward to serving you!</p>
-        </section>
-        <div>
-            <p><strong>Address:</strong> Soleil Cafe, 42 Copgrove Road, Bradford UK, BE9 2CY.</p>
-            <p><strong>Phone:</strong>+446029684621</p>
-    </main>
+  <nav>
+    <ul>
+      <li><a href="Homepage.html">Home</a></li> 
+      <li><a href="Menu.html">Menu</a></li>
+      <li><a href="Reservationpage.html">Reservation</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
+      <li><a href="account.html">Customer Account</a></li> 
+    </ul>
+  </nav>
 
-    <!-- Footer Section -->
-    <footer>
-        <p><a href="mailto:info@soleilcafe.com">info@soleilcafe.com</a></p>
-        <p>Follow us on <a href="#">Instagram</a> | <a href="#">Tiktok</a> | <a href="#">Facebook</a></p>
-        <p>&copy; 2025 Soleil Cafe. All rights reserved.</p>
-    </footer>
+  <main>
+    <section class="welcome">
+      <div class="welcome-text">
+        <h2>Welcome to Soleil Cafe</h2>
+        <p>At Soleil Cafe, we believe in bringing people together through great food and warm ambiance. Since 2020, we've been serving artisan coffee, fresh-baked pastries, and providing a relaxed space to work or hang out.</p>
+        <p>Whether you're meeting friends, studying for an exam, or just grabbing your favorite brew, Soleil Cafe is your place to unwind and feel at home.</p>
+      </div>
+
+      <div class="study-space">
+        <img src="study-space.png" alt="Study space">
+        <p>Our comfortable study space</p>
+      </div>
+    </section>
+
+    <div class="cta-links">
+      <a href="Menu.html">Check Out Our Menu</a>
+      <a href="Reservationpage.html">Reserve Here</a>
+    </div>
+
+    <section class="gallery">
+      <div class="gallery-item">
+        <div class="caption-overlay">A peek into our menu</div>
+        <img src="Coffe-art.png" alt="Coffee Art">
+      </div>
+      <div class="gallery-item">
+        <div class="caption-overlay">A peek into our menu</div>
+        <img src="pastry-array.png" alt="Pastries Display">
+      </div>
+    </section>
+
+    <section>
+      <p><strong>Visit Us:</strong> 42 Copgrove Road, Bradford, UK, BE9 2CY</p>
+      <p><strong>Phone:</strong> +446029684621</p>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="mailto:info@soleilcafe.com">info@soleilcafe.com</a></p>
+    <p>
+      <a href="#">Instagram</a> |
+      <a href="#">TikTok</a> |
+      <a href="#">Facebook</a>
+    </p>
+    <p>&copy; 2025 Soleil Cafe. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

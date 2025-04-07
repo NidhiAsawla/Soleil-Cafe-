@@ -1,59 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation Page</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to right, #EE7F60, #1B4575);
+      color: white;
+    }
+
+    header {
+      background-image: url('Cafe-interior.png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      background-color: rgba(15, 45, 50, 0.7);
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 2rem;
+    }
+
+    nav {
+      background-color: #1B4575;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .reservation-form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .reservation-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .reservation-form input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .submit-button {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background-color: #EE7F60;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #d4664f;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      background-color: rgba(15, 45, 50, 0.8);
+      padding: 12px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    footer {
+      background-color: #0F2D32;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Make a Reservation</h1>
-    </header>
-     <!-- Navigation Menu -->
-<nav>
-    <ul>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
-            <li><a href="account.html">Customer Account</a></li>
-            <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-    <main>
-            <form class="reservation-form">
-            <!-- Full Name Section -->
-            <form class="reservation-form">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-            
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-            
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
-            
-                <label for="guests">Number of Guests:</label>
-                <input type="number" id="guests" name="guests" min="1" required>
-            </form>
 
-        <!-- Reservation Page -->
-        <div id="success-message" class="hidden success-message">
-            Reservation Successful!
-        </div>
-  
-        <button onclick="showSuccessMessage()" class="submit-button">
-            Submit Reservation
-        </button>    
-    </main>
-    <footer>
-        <p>&copy; 2025 Soleil Cafe</p>
-    </footer>
+  <header>
+    <h1>Make a Reservation</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="Homepage.html">Home</a></li>
+      <li><a href="Menu.html">Menu</a></li>
+      <li><a href="Reservation.html">Reservation</a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="account.html">Customer Account</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form class="reservation-form" onsubmit="handleReservation(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Marvelous Edem" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="e.g. example@domain.com" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. +44 123 456 7890" 
+             pattern="^[0-9\s+\-]{10,}$" required 
+             title="Please enter a valid phone number with at least 10 digits">
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" placeholder="e.g. 2" required>
+
+      <button type="submit" class="submit-button">Submit Reservation</button>
+      
+      <div id="success-message" class="success-message"></div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Soleil Cafe</p>
+  </footer>
+
+  <script>
+    // Set min date to today
+    document.addEventListener("DOMContentLoaded", function () {
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.min = today;
+    });
+
+    // Handle form submission
+    function handleReservation(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone");
+
+      if (!phone.checkValidity()) {
+        alert("Please enter a valid phone number (at least 10 digits).");
+        return;
+      }
+
+      if (name) {
+        const message = `Hi ${name}, your reservation is successful!`;
+        const msgBox = document.getElementById("success-message");
+        msgBox.textContent = message;
+        msgBox.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
