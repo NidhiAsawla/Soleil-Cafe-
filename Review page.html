@@ -12,17 +12,15 @@
     }
     
     body {
-        font-family: 'Arial', sans-serif;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: large;
+      background: linear-gradient(to right, #EE7F60, #1B4575);
+      color: white;
     }
     
     header {
-        background-color: #1b4575;
+        background-color:  #0F2D32;
         color: #ffffff;
         padding: 20px;
         text-align: center;
@@ -34,8 +32,34 @@
     
     header h1 {
         margin-bottom: 5px;
+      color: #EE7F60;
+      margin: 0.5rem 0;
     }
     
+    nav {
+  background-color: #0F2D32;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 120px;
+}
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
     main {
         flex: 1;
         padding: 140px 20px 100px; /* Accounts for header and footer */
@@ -212,8 +236,19 @@
     <header>
         <h1>Soleil Cafe</h1>
         <h2>Customer Reviews</h2>
-    </header>
-    
+      </header>      
+
+      <nav>
+        <ul>
+          <li><a href="Homepage.html">Home</a></li>
+          <li><a href="Menu.html">Menu</a></li>
+          <li><a href="Reservation.html">Reservation</a></li>
+          <li><a href="Review.html">Review</a></li>
+          <li><a href="Sign Up.html">Sign Up</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
     <main>
         <div class="reviews-container">
             <div class="review-card">
