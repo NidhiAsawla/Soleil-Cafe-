@@ -79,12 +79,12 @@
         }
         .signup-form input[type="text"],
         .signup-form input[type="email"] {
-            width: 80%; /* Reduced width */
-            padding: 0.6rem; /* Reduced padding */
+            width: 80%; 
+            padding: 0.6rem; 
             margin-bottom: 1rem;
             border: none;
             border-radius: 8px;
-            font-size: 0.9rem; /* Adjusted font size */
+            font-size: 0.9rem; 
             font-family: Georgia, serif;
             color: #0F2D32;
         }
@@ -102,14 +102,14 @@
             padding: 0.8rem 1rem;
             cursor: pointer;
             border-radius: 8px;
-            width: 80%; /* Reduced button width */
+            width: 80%; 
             font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .signup-form button:hover {
             background: #d96d55;
-            transform: scale(1.05); /* Slight scaling effect */
+            transform: scale(1.05); 
         }
         .message {
             margin-top: 1.5rem;
@@ -125,6 +125,14 @@
             color: white;
             text-align: center;
         }
+        .social-media a{
+		margin: 0 0.5rem;
+		color: #EE7F60;
+		text-decoration: none;
+	}
+	.social-media a:hover{
+		text-decoration: underline;
+	}
         @media (max-width: 768px) {
             .signup-form {
                 padding: 1.5rem;
@@ -167,6 +175,11 @@
     <footer>
         &copy; 2025 Soleil Cafe. All rights reserved.
     </footer>
+    <div class="social-media">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
     <script>
         function handleSignUp() {
             const name = document.getElementById('name').value;
